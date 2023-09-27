@@ -4,6 +4,7 @@ using ObsImmConCollection.RegularCustomer;
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Security.Cryptography;
 
 internal class Program
@@ -22,26 +23,72 @@ internal class Program
 
         //Стартовый пустой лист
         ImmutableList<string> jackHouse = ImmutableList.Create<string>();
-        jackHouse.Add("sada");
-        var part1 = new Part1(jackHouse);
-        part1.AddPart();
-        var part2 = new Part2(part1.Poem);
-        part2.AddPart();
-        var part3 = new Part3(part2.Poem);
-        part3.AddPart();
+        
+        var part1 = new Part1();
+        part1.AddPart(jackHouse);
+        var part2 = new Part2();
+        part2.AddPart(part1.Poem);
+        var part3 = new Part3();
+        part3.AddPart(part2.Poem);
+        var part4 = new Part4();
+        part4.AddPart(part3.Poem);
+        var part5 = new Part5();
+        part5.AddPart(part4.Poem);
+        var part6 = new Part6();
+        part6.AddPart(part5.Poem);
+        var part7 = new Part7();
+        part7.AddPart(part6.Poem);
+        var part8 = new Part8();
+        part8.AddPart(part7.Poem);
+        var part9 = new Part9();
+        part9.AddPart(part8.Poem);
 
-        foreach (var item in part1.Poem)
+        
+        foreach (var part in part1.Poem)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(part);
         }
-        foreach (var item in part2.Poem)
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part2.Poem)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(part);
         }
-        foreach(var item in part3.Poem)
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part3.Poem)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(part);
         }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part4.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach ( var part in part5.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part6.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part7.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part8.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
+        foreach (var part in part9.Poem)
+        {
+            Console.WriteLine(part);
+        }
+        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
         Console.ReadKey();
     }
 
@@ -151,5 +198,5 @@ internal class Program
 
     }
     
-
+    
 }

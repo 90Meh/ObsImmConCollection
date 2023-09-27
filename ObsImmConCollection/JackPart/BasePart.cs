@@ -9,14 +9,10 @@ namespace ObsImmConCollection.JackPart
 {
     abstract class BasePart
     {
-        public BasePart(ImmutableList<string> poem)
-        {
-            Poem = poem;
-        }
 
-        public ImmutableList<string> Poem { get;  set; }
+        public ImmutableList<string> Poem;
 
-        public virtual void AddPart()
+        public virtual void AddPart(ImmutableList<string> strings)
         {
                         
         }

@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 namespace ObsImmConCollection.JackPart
 {
     internal class Part1 : BasePart
-    {
-        public Part1(ImmutableList<string> poem) : base(poem)
+    {        
+        public void AddPart (ImmutableList<string> strings)
         {
-        }
-
-        public override void AddPart()
-        {     
-            base.Poem.Add("Вот дом,");
-            base.Poem.Add("Который построил Джек.");
+            //List <string> temp = strings.Add("Вот дом,").Add("Который построил Джек.").ToList();            
+            Poem = strings.Add("Вот дом,").Add("Который построил Джек.");
         }
     }
 }

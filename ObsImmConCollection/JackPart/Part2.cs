@@ -9,17 +9,14 @@ namespace ObsImmConCollection.JackPart
 {
     internal class Part2 : BasePart
     {
-        public Part2(ImmutableList<string> poem) : base(poem)
+        public void AddPart(ImmutableList<string> strings)
         {
-        }
-
-        public override void AddPart()
-        {
-            
-            Poem.Add("А это пшеница,");
-            Poem.Add("Которая в темном чулане хранится");
-            Poem.Add("В доме,");
-            Poem.Add("Который построил Джек.");
+            var par = new List<string>()
+            { "А это пшеница,",
+                "Которая в темном чулане хранится",
+                "В доме,",
+                "Который построил Джек." };
+            Poem = strings.AddRange(par);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using ObsImmConCollection;
+using ObsImmConCollection.JackPart;
 using ObsImmConCollection.RegularCustomer;
 using System.Collections.Concurrent;
+using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Security.Cryptography;
 
@@ -9,15 +11,38 @@ internal class Program
     private static void Main(string[] args)
     {
         //Покупатель
-        StartCustomer();
-        Console.Clear();
+        //StartCustomer();
+       // Console.Clear();
 
         //Библиотека        
-        StartLibrary();
-        Console.Clear();
+        //StartLibrary();
+       // Console.Clear();
 
         //Дом который построил Джек
 
+        //Стартовый пустой лист
+        ImmutableList<string> jackHouse = ImmutableList.Create<string>();
+        jackHouse.Add("sada");
+        var part1 = new Part1(jackHouse);
+        part1.AddPart();
+        var part2 = new Part2(part1.Poem);
+        part2.AddPart();
+        var part3 = new Part3(part2.Poem);
+        part3.AddPart();
+
+        foreach (var item in part1.Poem)
+        {
+            Console.WriteLine(item);
+        }
+        foreach (var item in part2.Poem)
+        {
+            Console.WriteLine(item);
+        }
+        foreach(var item in part3.Poem)
+        {
+            Console.WriteLine(item);
+        }
+        Console.ReadKey();
     }
 
     //Покупатель главный метод
@@ -125,6 +150,6 @@ internal class Program
         }
 
     }
-
+    
 
 }

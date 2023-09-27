@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 
-namespace ObsImmConCollection
+namespace ObsImmConCollection.RegularCustomer
 {
     internal class Shop
     {
         //Класс магазин
 
         //Список товаров
-        public ObservableCollection<Item> itemsList = new();
+        internal ObservableCollection<Item> itemsList = new();
 
 
         //Метод добавления
@@ -28,6 +28,5 @@ namespace ObsImmConCollection
         public void Remove(Item item)
         { itemsList.Remove(item); }
 
-        
     }
 }

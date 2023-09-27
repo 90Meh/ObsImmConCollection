@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObsImmConCollection
+namespace ObsImmConCollection.RegularCustomer
 {
     internal class Item
     {
-        public Item(int id, String Name)
+        public Item(int id, string Name)
         {
-            this.Id = id;
-            this.Name = Name;            
+            Id = id;
+            this.Name = Name;
         }
 
         public string Name { get; set; }

@@ -12,83 +12,17 @@ internal class Program
     private static void Main(string[] args)
     {
         //Покупатель
-        //StartCustomer();
-       // Console.Clear();
+        StartCustomer();
+        Console.Clear();
 
         //Библиотека        
-        //StartLibrary();
-       // Console.Clear();
+        StartLibrary();
+        Console.Clear();
 
         //Дом который построил Джек
-
-        //Стартовый пустой лист
-        ImmutableList<string> jackHouse = ImmutableList.Create<string>();
+        StartJack();
         
-        var part1 = new Part1();
-        part1.AddPart(jackHouse);
-        var part2 = new Part2();
-        part2.AddPart(part1.Poem);
-        var part3 = new Part3();
-        part3.AddPart(part2.Poem);
-        var part4 = new Part4();
-        part4.AddPart(part3.Poem);
-        var part5 = new Part5();
-        part5.AddPart(part4.Poem);
-        var part6 = new Part6();
-        part6.AddPart(part5.Poem);
-        var part7 = new Part7();
-        part7.AddPart(part6.Poem);
-        var part8 = new Part8();
-        part8.AddPart(part7.Poem);
-        var part9 = new Part9();
-        part9.AddPart(part8.Poem);
 
-        
-        foreach (var part in part1.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part2.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part3.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part4.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach ( var part in part5.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part6.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part7.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part8.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
-        foreach (var part in part9.Poem)
-        {
-            Console.WriteLine(part);
-        }
-        Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
         Console.ReadKey();
     }
 
@@ -147,6 +81,52 @@ internal class Program
 
         } while (input != "3");
     }
+    //Джек главный метод
+    public static void StartJack()
+    {
+        //Стартовый пустой лист
+        ImmutableList<string> jackHouse = ImmutableList.Create<string>();
+        List<BasePart> parts = new List<BasePart>();
+
+        //Создание и вывод
+        var part1 = new Part1();
+        parts.Add(part1);
+        part1.AddPart(jackHouse);
+        var part2 = new Part2();
+        parts.Add(part2);
+        part2.AddPart(part1.Poem);
+        var part3 = new Part3();
+        parts.Add(part3);
+        part3.AddPart(part2.Poem);
+        var part4 = new Part4();
+        parts.Add(part4);
+        part4.AddPart(part3.Poem);
+        var part5 = new Part5();
+        parts.Add(part5);
+        part5.AddPart(part4.Poem);
+        var part6 = new Part6();
+        parts.Add(part6);
+        part6.AddPart(part5.Poem);
+        var part7 = new Part7();
+        parts.Add(part7);
+        part7.AddPart(part6.Poem);
+        var part8 = new Part8();
+        parts.Add(part8);
+        part8.AddPart(part7.Poem);
+        var part9 = new Part9();
+        parts.Add(part9);
+        part9.AddPart(part8.Poem);
+
+
+        foreach (var item in parts)
+        {
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXX");
+            foreach (var poe in item.Poem)
+            {
+                Console.WriteLine(poe);
+            }
+        }
+    }
 
 
     //Создание и поиск товара
@@ -197,6 +177,6 @@ internal class Program
         }
 
     }
-    
-    
+
+
 }

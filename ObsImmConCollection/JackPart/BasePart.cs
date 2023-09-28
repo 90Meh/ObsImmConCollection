@@ -9,6 +9,7 @@ namespace ObsImmConCollection.JackPart
 {
     abstract class BasePart
     {
+        //Базовый класс всех частей
 
         public ImmutableList<string> Poem;
 
